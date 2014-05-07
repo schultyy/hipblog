@@ -18,6 +18,8 @@
 		D4B203BD191A87FF00A9BF5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2039C191A87FF00A9BF5B /* Cocoa.framework */; };
 		D4B203C5191A87FF00A9BF5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B203C3191A87FF00A9BF5B /* InfoPlist.strings */; };
 		D4B203C7191A87FF00A9BF5B /* hipblogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203C6191A87FF00A9BF5B /* hipblogTests.m */; };
+		D4B203D4191A893400A9BF5B /* HBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203D2191A893400A9BF5B /* HBMainController.m */; };
+		D4B203D5191A893400A9BF5B /* HBMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B203D3191A893400A9BF5B /* HBMainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		D4B203C2191A87FF00A9BF5B /* hipblogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hipblogTests-Info.plist"; sourceTree = "<group>"; };
 		D4B203C4191A87FF00A9BF5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4B203C6191A87FF00A9BF5B /* hipblogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hipblogTests.m; sourceTree = "<group>"; };
+		D4B203D1191A893400A9BF5B /* HBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBMainController.h; sourceTree = "<group>"; };
+		D4B203D2191A893400A9BF5B /* HBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBMainController.m; sourceTree = "<group>"; };
+		D4B203D3191A893400A9BF5B /* HBMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBMainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,8 @@
 		D4B203A2191A87FF00A9BF5B /* hipblog */ = {
 			isa = PBXGroup;
 			children = (
+				D4B203D6191A894600A9BF5B /* Controllers */,
+				D4B203D0191A88A600A9BF5B /* Resources */,
 				D4B203AE191A87FF00A9BF5B /* HBAppDelegate.h */,
 				D4B203AF191A87FF00A9BF5B /* HBAppDelegate.m */,
 				D4B203B1191A87FF00A9BF5B /* MainMenu.xib */,
@@ -152,6 +159,23 @@
 				D4B203C3191A87FF00A9BF5B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4B203D0191A88A600A9BF5B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4B203D3191A893400A9BF5B /* HBMainWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D4B203D6191A894600A9BF5B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B203D1191A893400A9BF5B /* HBMainController.h */,
+				D4B203D2191A893400A9BF5B /* HBMainController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +258,7 @@
 				D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */,
 				D4B203B5191A87FF00A9BF5B /* Images.xcassets in Resources */,
 				D4B203AD191A87FF00A9BF5B /* Credits.rtf in Resources */,
+				D4B203D5191A893400A9BF5B /* HBMainWindow.xib in Resources */,
 				D4B203B3191A87FF00A9BF5B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4B203B0191A87FF00A9BF5B /* HBAppDelegate.m in Sources */,
+				D4B203D4191A893400A9BF5B /* HBMainController.m in Sources */,
 				D4B203A9191A87FF00A9BF5B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
