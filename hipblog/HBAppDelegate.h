@@ -15,4 +15,6 @@
 
 @property (retain) HBMainController *mainController;
 
+-(IBAction) openDirectory:(id)sender;
+
 @end

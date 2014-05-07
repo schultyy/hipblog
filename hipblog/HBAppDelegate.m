@@ -19,4 +19,19 @@
     [[self mainController] showWindow:self];
 }
 
+-(IBAction) openDirectory:(id)sender {
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    
+    [openDlg setCanChooseFiles:YES];
+    [openDlg setAllowsMultipleSelection:NO];
+    [openDlg setCanChooseDirectories:YES];
+    [openDlg setCanChooseFiles:NO];
+
+    if([openDlg runModal] == NSOKButton)
+    {
+        id url = [openDlg directoryURL];
+        NSLog(@"URL: %@", url);
+    }
+}
+
 @end
