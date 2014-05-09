@@ -15,6 +15,7 @@
     if(self) {
         contentStream = stream;
         current = 0;
+        separatorCount = 0;
     }
     return self;
 }
@@ -34,11 +35,22 @@
                 [currentToken setIdentifier:@"COLON"];
                 [currentToken setValue:@":"];
                 return currentToken;
+            case '-':
+                if(separatorCount < 2) {
+                    separatorCount++;
+                    break;
+                } else {
+                    separatorCount = 0;
+                    [currentToken setIdentifier:@"SEPARATOR"];
+                    [currentToken setValue:@"---"];
+                    return currentToken;
+                }
             default:
                 [currentToken setIdentifier:@"TEXT"];
                 id cstr = [[NSString alloc] initWithBytes:&c length:1 encoding:NSStringEncodingConversionAllowLossy];
                 [buffer appendString: cstr];
                 [currentToken setValue:buffer];
+                break;
         }
 
         current++;

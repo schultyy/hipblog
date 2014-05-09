@@ -38,4 +38,11 @@ static NSString *testStrTitle = @"title: Awesome blog post";
     XCTAssertEqualObjects([token value], @":");
 }
 
+-(void) testTokenizesSeparator {
+    id lexer = [self lexerWithString:@"---"];
+    HBToken *token = [lexer nextToken];
+    XCTAssertEqualObjects([token identifier], @"SEPARATOR");
+    XCTAssertEqualObjects([token value], @"---");
+}
+
 @end

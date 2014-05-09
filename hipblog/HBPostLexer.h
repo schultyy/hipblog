@@ -12,6 +12,7 @@
 @interface HBPostLexer : NSObject {
     NSString *contentStream;
     NSUInteger current;
+    NSUInteger separatorCount;
 }
 
 -(id) initWithString: (NSString *) stream;
