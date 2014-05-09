@@ -12,11 +12,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    HBMainController *controller = [[HBMainController alloc] init];
-    
-    [self setMainController:controller];
-    [[self mainController] showWindow:self];
 }
 
 -(IBAction) openDirectory:(id)sender {
@@ -31,6 +26,10 @@
     {
         id url = [openDlg directoryURL];
         NSLog(@"URL: %@", url);
+
+        HBMainController *controller = [[HBMainController alloc] initWitDirectoryPath: url];
+        [self setMainController:controller];
+        [[self mainController] showWindow:self];
     }
 }
 

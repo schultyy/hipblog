@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface HBMainController : NSWindowController
+@interface HBMainController : NSWindowController {
+
+    NSURL *directoryUrl;
+}
+
+- (id)initWitDirectoryPath: (NSURL *) url;
 
 @end

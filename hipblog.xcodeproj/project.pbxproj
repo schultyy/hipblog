@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6964F7D313DC78A085918964 /* HBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F298405C6A7D3D2D5A59 /* HBPost.m */; };
 		D4B2039D191A87FF00A9BF5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2039C191A87FF00A9BF5B /* Cocoa.framework */; };
 		D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B203A5191A87FF00A9BF5B /* InfoPlist.strings */; };
 		D4B203A9191A87FF00A9BF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203A8191A87FF00A9BF5B /* main.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6964F123F7A313404DEED71E /* HBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPost.h; sourceTree = "<group>"; };
+		6964F298405C6A7D3D2D5A59 /* HBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPost.m; sourceTree = "<group>"; };
 		D4B20399191A87FF00A9BF5B /* hipblog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hipblog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B2039C191A87FF00A9BF5B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4B2039F191A87FF00A9BF5B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6964F173FDC6494ABF88000B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6964F298405C6A7D3D2D5A59 /* HBPost.m */,
+				6964F123F7A313404DEED71E /* HBPost.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D4B20390191A87FF00A9BF5B = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +139,7 @@
 				D4B203B1191A87FF00A9BF5B /* MainMenu.xib */,
 				D4B203B4191A87FF00A9BF5B /* Images.xcassets */,
 				D4B203A3191A87FF00A9BF5B /* Supporting Files */,
+				6964F173FDC6494ABF88000B /* Models */,
 			);
 			path = hipblog;
 			sourceTree = "<group>";
@@ -281,6 +294,7 @@
 				D4B203B0191A87FF00A9BF5B /* HBAppDelegate.m in Sources */,
 				D4B203D4191A893400A9BF5B /* HBMainController.m in Sources */,
 				D4B203A9191A87FF00A9BF5B /* main.m in Sources */,
+				6964F7D313DC78A085918964 /* HBPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
