@@ -39,6 +39,7 @@
         switch(c) {
             case ((unichar)32):
             case '\t':
+            case '\n':
                 break;
             case ':':
                 currentToken = [[HBToken alloc] init];
@@ -55,6 +56,7 @@
                     currentToken = [[HBToken alloc] init];
                     [currentToken setIdentifier:@"SEPARATOR"];
                     [currentToken setValue:@"---"];
+                    current++;
                     return currentToken;
                 }
             default:
