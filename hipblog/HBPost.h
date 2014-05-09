@@ -14,6 +14,8 @@
 
 @property (retain) NSString *content;
 
+@property (retain) NSString *layout;
+
 +(HBPost *) fromFile: (NSString *) filePath;
 
 @end

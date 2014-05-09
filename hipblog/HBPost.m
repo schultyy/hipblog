@@ -13,6 +13,7 @@
     if(self) {
         [self setTitle:@""];
         [self setContent:@""];
+        [self setLayout:@""];
     }
     return self;
 }
@@ -26,14 +27,6 @@
 }
 
 +(void) parseFile: (NSString *) file {
-    HBPost *post = [[HBPost alloc] init];
-
-    for (NSString *line in [file componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]]) {
-        if([line isEqualToString:@"title"]) {
-//            NSString stringby
-//            [post setTitle:<#(NSString *)title#>];
-        }
-    }
 }
 
 +(NSString *) parseTitleFrom: (NSString *) content {

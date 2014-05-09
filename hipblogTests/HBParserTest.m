@@ -28,7 +28,7 @@
     parser = [[HBPostParser alloc] initWithTokenSource: tokenSource];
 }
 
--(void) testParseBlogpost {
+-(void) testParseBlogpostWithTitle {
     //preface
     [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
     [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Title"]];
@@ -41,6 +41,27 @@
 
     XCTAssertEqualObjects([post title], @"Hello");
     XCTAssertEqualObjects([post content], @"CONTENTS");
+}
+
+-(void) testParseBlogpostWithTitleAndLayout {
+    //preface
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Title"]];
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_COLON_IDENTIFIER andValue:@":"]];
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Hello"]];
+    
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"layout"]];
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_COLON_IDENTIFIER andValue:@":"]];
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"post"]];
+    
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
+    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"CONTENTS"]];
+    HBPost *post = [parser parse: nil];
+    //asserts
+    
+    XCTAssertEqualObjects([post title], @"Hello");
+    XCTAssertEqualObjects([post content], @"CONTENTS");
+    XCTAssertEqualObjects([post layout], @"post");
 }
 
 @end

@@ -29,11 +29,15 @@
     while ([token identifier] != HB_EOF_IDENTIFIER) {
 
         if(frontMatterActive) {
-            if([token identifier] == HB_TEXT_IDENTIFIER && [[[token value] lowercaseString] isEqualToString:@"title"]) {
-                HBToken *colonToken = [tokenSource nextToken];
-                if([colonToken identifier] == HB_COLON_IDENTIFIER) {
-                    id titleToken = [tokenSource nextToken];
-                    [post setTitle: [titleToken value]];
+            if([token identifier] == HB_TEXT_IDENTIFIER) {
+                if([[[token value] lowercaseString] isEqualToString:@"title"] ||
+                   [[[token value] lowercaseString] isEqualToString:@"layout"]) {
+                    NSString *property = [[token value] lowercaseString];
+                    HBToken *colonToken = [tokenSource nextToken];
+                    if([colonToken identifier] == HB_COLON_IDENTIFIER) {
+                        HBToken *valueToken = [tokenSource nextToken];
+                        [post setValue: valueToken.value forKey: property];
+                    }
                 }
             }
         }
