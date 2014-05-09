@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6964F7D313DC78A085918964 /* HBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F298405C6A7D3D2D5A59 /* HBPost.m */; };
+		D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FC191D28B200A3E605 /* HBPostParser.m */; };
+		D4212400191D28BE00A3E605 /* HBPostLexer.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FF191D28BE00A3E605 /* HBPostLexer.m */; };
+		D4212403191D28D100A3E605 /* HBToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212402191D28D100A3E605 /* HBToken.m */; };
+		D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212405191D2A1000A3E605 /* HBLexerTest.m */; };
 		D4B2039D191A87FF00A9BF5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2039C191A87FF00A9BF5B /* Cocoa.framework */; };
 		D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B203A5191A87FF00A9BF5B /* InfoPlist.strings */; };
 		D4B203A9191A87FF00A9BF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203A8191A87FF00A9BF5B /* main.m */; };
@@ -36,6 +40,13 @@
 /* Begin PBXFileReference section */
 		6964F123F7A313404DEED71E /* HBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPost.h; sourceTree = "<group>"; };
 		6964F298405C6A7D3D2D5A59 /* HBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPost.m; sourceTree = "<group>"; };
+		D42123FB191D28B200A3E605 /* HBPostParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostParser.h; sourceTree = "<group>"; };
+		D42123FC191D28B200A3E605 /* HBPostParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostParser.m; sourceTree = "<group>"; };
+		D42123FE191D28BE00A3E605 /* HBPostLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostLexer.h; sourceTree = "<group>"; };
+		D42123FF191D28BE00A3E605 /* HBPostLexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostLexer.m; sourceTree = "<group>"; };
+		D4212401191D28D100A3E605 /* HBToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBToken.h; sourceTree = "<group>"; };
+		D4212402191D28D100A3E605 /* HBToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBToken.m; sourceTree = "<group>"; };
+		D4212405191D2A1000A3E605 /* HBLexerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBLexerTest.m; sourceTree = "<group>"; };
 		D4B20399191A87FF00A9BF5B /* hipblog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hipblog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B2039C191A87FF00A9BF5B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4B2039F191A87FF00A9BF5B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +101,19 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D42123FA191D289E00A3E605 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				D42123FB191D28B200A3E605 /* HBPostParser.h */,
+				D42123FC191D28B200A3E605 /* HBPostParser.m */,
+				D42123FE191D28BE00A3E605 /* HBPostLexer.h */,
+				D42123FF191D28BE00A3E605 /* HBPostLexer.m */,
+				D4212401191D28D100A3E605 /* HBToken.h */,
+				D4212402191D28D100A3E605 /* HBToken.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		D4B20390191A87FF00A9BF5B = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +156,7 @@
 		D4B203A2191A87FF00A9BF5B /* hipblog */ = {
 			isa = PBXGroup;
 			children = (
+				D42123FA191D289E00A3E605 /* Lib */,
 				D4B203D6191A894600A9BF5B /* Controllers */,
 				D4B203D0191A88A600A9BF5B /* Resources */,
 				D4B203AE191A87FF00A9BF5B /* HBAppDelegate.h */,
@@ -161,6 +186,7 @@
 			children = (
 				D4B203C6191A87FF00A9BF5B /* hipblogTests.m */,
 				D4B203C1191A87FF00A9BF5B /* Supporting Files */,
+				D4212405191D2A1000A3E605 /* HBLexerTest.m */,
 			);
 			path = hipblogTests;
 			sourceTree = "<group>";
@@ -291,10 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4212403191D28D100A3E605 /* HBToken.m in Sources */,
+				D4212400191D28BE00A3E605 /* HBPostLexer.m in Sources */,
 				D4B203B0191A87FF00A9BF5B /* HBAppDelegate.m in Sources */,
 				D4B203D4191A893400A9BF5B /* HBMainController.m in Sources */,
 				D4B203A9191A87FF00A9BF5B /* main.m in Sources */,
 				6964F7D313DC78A085918964 /* HBPost.m in Sources */,
+				D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */,
 				D4B203C7191A87FF00A9BF5B /* hipblogTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +537,7 @@
 				D4B203CC191A87FF00A9BF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4B203CD191A87FF00A9BF5B /* Build configuration list for PBXNativeTarget "hipblogTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +546,7 @@
 				D4B203CF191A87FF00A9BF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
