@@ -10,10 +10,10 @@
 
 @interface HBToken : NSObject
 
-@property (retain) NSString *identifier;
+@property (assign) NSInteger identifier;
 
 @property (retain) id value;
 
-//-(id) initWithIdentifier: (NSString *) identifier andValue: (id) value;
+-(id) initWithIdentifier: (NSInteger) identifier andValue: (id) value;
 
 @end

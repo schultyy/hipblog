@@ -10,13 +10,18 @@
 
 @implementation HBToken
 
-//-(id) initWithIdentifier: (NSString *) identifier andValue: (id) value {
-//    self = [super init];
-//    if(self) {
-//        [self setIdentifier:identifier];
-//        [self setValue:value];
-//    }
-//    return self;
-//}
+-(id) init {
+    self = [self initWithIdentifier: 0 andValue:nil];
+    return self;
+}
+
+-(id) initWithIdentifier: (NSInteger) identifier andValue: (id) value {
+    self = [super init];
+    if(self) {
+        [self setIdentifier:identifier];
+        [self setValue:value];
+    }
+    return self;
+}
 
 @end

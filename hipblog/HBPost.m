@@ -8,6 +8,15 @@
 
 @implementation HBPost
 
+-(id) init {
+    self = [super init];
+    if(self) {
+        [self setTitle:@""];
+        [self setContent:@""];
+    }
+    return self;
+}
+
 +(HBPost *) fromFile: (NSString *) filePath {
     NSLog(@"PATH: %@", [filePath class]);
     NSLog(@"PATH: %@", filePath);

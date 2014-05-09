@@ -1,0 +1,6 @@
+#import "HBTokenIdentifiers.h"
+
+NSInteger HB_SEPARATOR_IDENTIFIER = 1;
+NSInteger HB_TEXT_IDENTIFIER = 2;
+NSInteger HB_COLON_IDENTIFIER = 3;
+NSInteger HB_EOF_IDENTIFIER = -1;

@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6964F56887143DBC8EB7F099 /* HBTokenIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */; };
 		6964F7D313DC78A085918964 /* HBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F298405C6A7D3D2D5A59 /* HBPost.m */; };
 		D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FC191D28B200A3E605 /* HBPostParser.m */; };
 		D4212400191D28BE00A3E605 /* HBPostLexer.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FF191D28BE00A3E605 /* HBPostLexer.m */; };
 		D4212403191D28D100A3E605 /* HBToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212402191D28D100A3E605 /* HBToken.m */; };
 		D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212405191D2A1000A3E605 /* HBLexerTest.m */; };
+		D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212408191D3F6600A3E605 /* HBParserTest.m */; };
+		D421240D191D3FF100A3E605 /* HBTokenSourceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */; };
 		D4B2039D191A87FF00A9BF5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2039C191A87FF00A9BF5B /* Cocoa.framework */; };
 		D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B203A5191A87FF00A9BF5B /* InfoPlist.strings */; };
 		D4B203A9191A87FF00A9BF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203A8191A87FF00A9BF5B /* main.m */; };
@@ -40,6 +43,8 @@
 /* Begin PBXFileReference section */
 		6964F123F7A313404DEED71E /* HBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPost.h; sourceTree = "<group>"; };
 		6964F298405C6A7D3D2D5A59 /* HBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPost.m; sourceTree = "<group>"; };
+		6964F54CB057DC183A36892E /* HBTokenIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenIdentifiers.h; sourceTree = "<group>"; };
+		6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenIdentifiers.m; sourceTree = "<group>"; };
 		D42123FB191D28B200A3E605 /* HBPostParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostParser.h; sourceTree = "<group>"; };
 		D42123FC191D28B200A3E605 /* HBPostParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostParser.m; sourceTree = "<group>"; };
 		D42123FE191D28BE00A3E605 /* HBPostLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostLexer.h; sourceTree = "<group>"; };
@@ -47,6 +52,10 @@
 		D4212401191D28D100A3E605 /* HBToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBToken.h; sourceTree = "<group>"; };
 		D4212402191D28D100A3E605 /* HBToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBToken.m; sourceTree = "<group>"; };
 		D4212405191D2A1000A3E605 /* HBLexerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBLexerTest.m; sourceTree = "<group>"; };
+		D4212408191D3F6600A3E605 /* HBParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBParserTest.m; sourceTree = "<group>"; };
+		D421240A191D3F9E00A3E605 /* HBTokenSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTokenSource.h; sourceTree = "<group>"; };
+		D421240B191D3FF100A3E605 /* HBTokenSourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenSourceMock.h; sourceTree = "<group>"; };
+		D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenSourceMock.m; sourceTree = "<group>"; };
 		D4B20399191A87FF00A9BF5B /* hipblog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hipblog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B2039C191A87FF00A9BF5B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4B2039F191A87FF00A9BF5B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -110,6 +119,9 @@
 				D42123FF191D28BE00A3E605 /* HBPostLexer.m */,
 				D4212401191D28D100A3E605 /* HBToken.h */,
 				D4212402191D28D100A3E605 /* HBToken.m */,
+				D421240A191D3F9E00A3E605 /* HBTokenSource.h */,
+				6964F54CB057DC183A36892E /* HBTokenIdentifiers.h */,
+				6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -187,6 +199,9 @@
 				D4B203C6191A87FF00A9BF5B /* hipblogTests.m */,
 				D4B203C1191A87FF00A9BF5B /* Supporting Files */,
 				D4212405191D2A1000A3E605 /* HBLexerTest.m */,
+				D4212408191D3F6600A3E605 /* HBParserTest.m */,
+				D421240B191D3FF100A3E605 /* HBTokenSourceMock.h */,
+				D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */,
 			);
 			path = hipblogTests;
 			sourceTree = "<group>";
@@ -324,6 +339,7 @@
 				D4B203A9191A87FF00A9BF5B /* main.m in Sources */,
 				6964F7D313DC78A085918964 /* HBPost.m in Sources */,
 				D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */,
+				6964F56887143DBC8EB7F099 /* HBTokenIdentifiers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D421240D191D3FF100A3E605 /* HBTokenSourceMock.m in Sources */,
 				D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */,
+				D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */,
 				D4B203C7191A87FF00A9BF5B /* hipblogTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

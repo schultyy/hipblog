@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "HBToken.h"
+#import "HBTokenSource.h"
 
-@interface HBPostLexer : NSObject {
+@interface HBPostLexer : NSObject<HBTokenSource> {
     NSString *contentStream;
     NSUInteger current;
     NSUInteger separatorCount;

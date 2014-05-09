@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HBTokenSource.h"
 
-@interface HBPostParser : NSObject
+@class HBPost;
+
+@interface HBPostParser : NSObject {
+    NSObject<HBTokenSource> *tokenSource;
+    BOOL frontMatterActive;
+}
+
+-(id) initWithTokenSource: (NSObject<HBTokenSource> *) source;
+
+-(HBPost *) parse: (NSError **) error;
 
 @end

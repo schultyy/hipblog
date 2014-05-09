@@ -7,6 +7,7 @@
 //
 
 #import "HBPostLexer.h"
+#import "HBTokenIdentifiers.h"
 
 @implementation HBPostLexer
 
@@ -43,7 +44,7 @@
                 break;
             case ':':
                 currentToken = [[HBToken alloc] init];
-                [currentToken setIdentifier:@"COLON"];
+                [currentToken setIdentifier:HB_COLON_IDENTIFIER];
                 [currentToken setValue:@":"];
                 current++;
                 return currentToken;
@@ -54,7 +55,7 @@
                 } else {
                     separatorCount = 0;
                     currentToken = [[HBToken alloc] init];
-                    [currentToken setIdentifier:@"SEPARATOR"];
+                    [currentToken setIdentifier: HB_SEPARATOR_IDENTIFIER];
                     [currentToken setValue:@"---"];
                     current++;
                     return currentToken;
@@ -71,7 +72,7 @@
 
                 if(![self isChar:lookahead]) {
                     HBToken *tmp = [[HBToken alloc] init];
-                    [tmp setIdentifier:@"TEXT"];
+                    [tmp setIdentifier: HB_TEXT_IDENTIFIER];
                     [tmp setValue:buffer];
                     current++;
                     return tmp;
@@ -81,8 +82,9 @@
 
         current++;
     }
+
     HBToken *eof = [[HBToken alloc] init];
-    [eof setIdentifier:@"EOF"];
+    [eof setIdentifier: HB_EOF_IDENTIFIER];
     [eof setValue:@"<EOF>"];
     return eof;
 }

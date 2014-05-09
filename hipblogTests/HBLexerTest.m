@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "HBPostLexer.h"
+#import "HBTokenIdentifiers.h"
 
 @interface HBLexerTest : XCTestCase
 
@@ -27,28 +28,28 @@ static NSString *testStrTitle = @"title: Awesome blog post";
 -(void) testTokenizesTitle {
     id lexer = [self lexerWithString:@"title"];
     HBToken *token = [lexer nextToken];
-    XCTAssertEqualObjects([token identifier], @"TEXT");
+    XCTAssertEqual([token identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([token value], @"title");
 }
 
 -(void) testTokenizesColon {
     id lexer = [self lexerWithString:@":"];
     HBToken *token = [lexer nextToken];
-    XCTAssertEqualObjects([token identifier], @"COLON");
+    XCTAssertEqual([token identifier], HB_COLON_IDENTIFIER);
     XCTAssertEqualObjects([token value], @":");
 }
 
 -(void) testTokenizesSeparator {
     id lexer = [self lexerWithString:@"---"];
     HBToken *token = [lexer nextToken];
-    XCTAssertEqualObjects([token identifier], @"SEPARATOR");
+    XCTAssertEqual([token identifier], HB_SEPARATOR_IDENTIFIER);
     XCTAssertEqualObjects([token value], @"---");
 }
 
 -(void) testTokenizesEOF {
     id lexer = [self lexerWithString:@""];
     HBToken *token = [lexer nextToken];
-    XCTAssertEqualObjects([token identifier], @"EOF");
+    XCTAssertEqual([token identifier], HB_EOF_IDENTIFIER);
     XCTAssertEqualObjects([token value], @"<EOF>");
 }
 
@@ -59,16 +60,16 @@ static NSString *testStrTitle = @"title: Awesome blog post";
     HBToken *valueToken = [lexer nextToken];
     HBToken *eofToken   = [lexer nextToken];
 
-    XCTAssertEqualObjects([titleToken identifier], @"TEXT");
+    XCTAssertEqual([titleToken identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([titleToken value], @"title");
 
-    XCTAssertEqualObjects([colonToken identifier], @"COLON");
+    XCTAssertEqual([colonToken identifier], HB_COLON_IDENTIFIER);
     XCTAssertEqualObjects([colonToken value], @":");
 
-    XCTAssertEqualObjects([valueToken identifier], @"TEXT");
+    XCTAssertEqual([valueToken identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([valueToken value], @"awesome");
 
-    XCTAssertEqualObjects([eofToken identifier], @"EOF");
+    XCTAssertEqual([eofToken identifier], HB_EOF_IDENTIFIER);
 }
 
 -(void) testTokenizesPostWithFrontmatter {
@@ -83,27 +84,27 @@ static NSString *testStrTitle = @"title: Awesome blog post";
     HBToken *content3Token = [lexer nextToken];
     HBToken *eofToken      = [lexer nextToken];
     
-    XCTAssertEqualObjects([firstSepToken identifier], @"SEPARATOR");
+    XCTAssertEqual([firstSepToken identifier], HB_SEPARATOR_IDENTIFIER);
     
-    XCTAssertEqualObjects([titleToken identifier], @"TEXT");
+    XCTAssertEqual([titleToken identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([titleToken value], @"title");
     
-    XCTAssertEqualObjects([colonToken identifier], @"COLON");
+    XCTAssertEqual([colonToken identifier], HB_COLON_IDENTIFIER);
     XCTAssertEqualObjects([colonToken value], @":");
     
-    XCTAssertEqualObjects([valueToken identifier], @"TEXT");
+    XCTAssertEqual([valueToken identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([valueToken value], @"awesome");
     
-    XCTAssertEqualObjects([secSepToken identifier], @"SEPARATOR");
+    XCTAssertEqual([secSepToken identifier], HB_SEPARATOR_IDENTIFIER);
     
-    XCTAssertEqualObjects([content1Token identifier], @"TEXT");
+    XCTAssertEqual([content1Token identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([content1Token value], @"Blog");
-    XCTAssertEqualObjects([content2Token identifier], @"TEXT");
+    XCTAssertEqual([content2Token identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([content2Token value], @"post");
-    XCTAssertEqualObjects([content3Token identifier], @"TEXT");
+    XCTAssertEqual([content3Token identifier], HB_TEXT_IDENTIFIER);
     XCTAssertEqualObjects([content3Token value], @"content");
     
-    XCTAssertEqualObjects([eofToken identifier], @"EOF");
+    XCTAssertEqual([eofToken identifier], HB_EOF_IDENTIFIER);
 }
 
 @end
