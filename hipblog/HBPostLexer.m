@@ -20,9 +20,15 @@
     return self;
 }
 
+-(BOOL) isChar: (unichar) ch {
+    return (ch >= 'a' && ch <= 'z') ||
+            (ch >= 'A' && ch <= 'Z');
+}
+
 -(HBToken *) nextToken {
     NSMutableString *buffer = nil;
-    HBToken *currentToken = [[HBToken alloc] init];
+    HBToken *currentToken = nil; // [[HBToken alloc] init];
+    NSString *cstr = nil;
 
     while(current < [contentStream length]) {
         unichar c = [contentStream characterAtIndex:current];
@@ -31,9 +37,14 @@
             buffer = [[NSMutableString alloc] init];
         }
         switch(c) {
+            case ((unichar)32):
+            case '\t':
+                break;
             case ':':
+                currentToken = [[HBToken alloc] init];
                 [currentToken setIdentifier:@"COLON"];
                 [currentToken setValue:@":"];
+                current++;
                 return currentToken;
             case '-':
                 if(separatorCount < 2) {
@@ -41,21 +52,37 @@
                     break;
                 } else {
                     separatorCount = 0;
+                    currentToken = [[HBToken alloc] init];
                     [currentToken setIdentifier:@"SEPARATOR"];
                     [currentToken setValue:@"---"];
                     return currentToken;
                 }
             default:
-                [currentToken setIdentifier:@"TEXT"];
-                id cstr = [[NSString alloc] initWithBytes:&c length:1 encoding:NSStringEncodingConversionAllowLossy];
+                cstr = [[NSString alloc] initWithBytes:&c length:1 encoding:NSStringEncodingConversionAllowLossy];
                 [buffer appendString: cstr];
-                [currentToken setValue:buffer];
+                unichar lookahead;
+                if(current + 1 < [contentStream length]) {
+                    lookahead = [contentStream characterAtIndex: current + 1];
+                } else {
+                    lookahead = 0;
+                }
+
+                if(![self isChar:lookahead]) {
+                    HBToken *tmp = [[HBToken alloc] init];
+                    [tmp setIdentifier:@"TEXT"];
+                    [tmp setValue:buffer];
+                    current++;
+                    return tmp;
+                }
                 break;
         }
 
         current++;
     }
-    return currentToken;
+    HBToken *eof = [[HBToken alloc] init];
+    [eof setIdentifier:@"EOF"];
+    [eof setValue:@"<EOF>"];
+    return eof;
 }
 
 @end

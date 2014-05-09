@@ -13,6 +13,7 @@
     NSString *contentStream;
     NSUInteger current;
     NSUInteger separatorCount;
+    BOOL inText;
 }
 
 -(id) initWithString: (NSString *) stream;
