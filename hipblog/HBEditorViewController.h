@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class HBPost;
+
 @interface HBEditorViewController : NSViewController
+
+@property (retain) HBPost *currentPost;
 
 @end

@@ -9,6 +9,7 @@
 #import "HBMainController.h"
 #import "HBEditorViewController.h"
 #import "HBPost.h"
+#import "HBPostWriter.h"
 
 @interface HBMainController ()
 
@@ -51,6 +52,14 @@
 
         [HBPost fromFile: absolutePath];
     }
+}
+
+-(void)saveCurrentPost {
+    id posts = [directoryUrl.path stringByAppendingPathComponent:@"_posts"];
+
+    HBPost *post = [[self editorController] currentPost];
+
+    [HBPostWriter writeToFile:posts post: post];
 }
 
 @end

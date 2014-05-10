@@ -26,6 +26,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.title" id="XjU-Pa-fco"/>
+                    </connections>
                 </textField>
                 <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4f-f6-5gq">
                     <rect key="frame" x="20" y="371" width="650" height="22"/>
@@ -38,6 +41,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.categories" id="OjZ-sY-bgL"/>
+                    </connections>
                 </textField>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpe-dH-c5I">
                     <rect key="frame" x="20" y="10" width="650" height="351"/>
@@ -47,6 +53,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.content" id="k4C-Pd-go9"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
@@ -64,5 +73,6 @@
                 <constraint firstItem="j4f-f6-5gq" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="z2n-30-HeH"/>
             </constraints>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="fZh-KJ-1pW"/>
     </objects>
 </document>

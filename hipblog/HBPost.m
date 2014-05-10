@@ -14,6 +14,8 @@
         [self setTitle:@""];
         [self setContent:@""];
         [self setLayout:@""];
+        [self setCategories:@""];
+        [self setDate: [NSDate date]];
     }
     return self;
 }

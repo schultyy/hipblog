@@ -33,4 +33,12 @@
     }
 }
 
+-(IBAction) saveBlogpost:(id)sender{
+    [[self mainController] saveCurrentPost];
+}
+
+-(BOOL) canSaveBlogpost {
+    return [self mainController] != nil;
+}
+
 @end

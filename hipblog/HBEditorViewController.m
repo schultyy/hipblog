@@ -7,6 +7,7 @@
 //
 
 #import "HBEditorViewController.h"
+#import "HBPost.h"
 
 @interface HBEditorViewController ()
 
@@ -18,7 +19,7 @@
 {
     self = [super initWithNibName:@"HBEditorView" bundle:nil];
     if (self) {
-        // Initialization code here.
+        [self setCurrentPost:[[HBPost alloc] init]];
     }
     return self;
 }

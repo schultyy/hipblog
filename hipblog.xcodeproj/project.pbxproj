@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6964F40DF8C75E52E5C523B8 /* HBPostWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F8BB7380E803C050A7E6 /* HBPostWriter.m */; };
 		6964F56887143DBC8EB7F099 /* HBTokenIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */; };
 		6964F7D313DC78A085918964 /* HBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F298405C6A7D3D2D5A59 /* HBPost.m */; };
 		6964FC420303532CBECA277A /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6964F39A36FD68A268A9A211 /* .travis.yml */; };
@@ -49,6 +50,8 @@
 		6964F39A36FD68A268A9A211 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = "<group>"; };
 		6964F54CB057DC183A36892E /* HBTokenIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenIdentifiers.h; sourceTree = "<group>"; };
 		6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenIdentifiers.m; sourceTree = "<group>"; };
+		6964F8BB7380E803C050A7E6 /* HBPostWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostWriter.m; sourceTree = "<group>"; };
+		6964F9EBE146221F0DAEAAC5 /* HBPostWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostWriter.h; sourceTree = "<group>"; };
 		D41953D0191E258100827AEC /* HBEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBEditorViewController.h; sourceTree = "<group>"; };
 		D41953D1191E258100827AEC /* HBEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBEditorViewController.m; sourceTree = "<group>"; };
 		D41953D3191E259200827AEC /* HBEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBEditorView.xib; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				D421240A191D3F9E00A3E605 /* HBTokenSource.h */,
 				6964F54CB057DC183A36892E /* HBTokenIdentifiers.h */,
 				6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */,
+				6964F8BB7380E803C050A7E6 /* HBPostWriter.m */,
+				6964F9EBE146221F0DAEAAC5 /* HBPostWriter.h */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				6964F7D313DC78A085918964 /* HBPost.m in Sources */,
 				D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */,
 				6964F56887143DBC8EB7F099 /* HBTokenIdentifiers.m in Sources */,
+				6964F40DF8C75E52E5C523B8 /* HBPostWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

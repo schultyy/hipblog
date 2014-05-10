@@ -20,4 +20,6 @@
 
 - (id)initWitDirectoryPath: (NSURL *) url;
 
+-(void) saveCurrentPost;
+
 @end

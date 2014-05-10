@@ -16,6 +16,10 @@
 
 @property (retain) NSString *layout;
 
+@property (retain) NSString *categories;
+
+@property (retain) NSDate *date;
+
 +(HBPost *) fromFile: (NSString *) filePath;
 
 @end

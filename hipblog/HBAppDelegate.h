@@ -17,4 +17,8 @@
 
 -(IBAction) openDirectory:(id)sender;
 
+-(IBAction)saveBlogpost:(id)sender;
+
+-(BOOL) canSaveBlogpost;
+
 @end
