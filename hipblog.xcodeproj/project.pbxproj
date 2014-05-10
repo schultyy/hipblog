@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6964F56887143DBC8EB7F099 /* HBTokenIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */; };
 		6964F7D313DC78A085918964 /* HBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F298405C6A7D3D2D5A59 /* HBPost.m */; };
+		6964FC420303532CBECA277A /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6964F39A36FD68A268A9A211 /* .travis.yml */; };
 		D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FC191D28B200A3E605 /* HBPostParser.m */; };
 		D4212400191D28BE00A3E605 /* HBPostLexer.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FF191D28BE00A3E605 /* HBPostLexer.m */; };
 		D4212403191D28D100A3E605 /* HBToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212402191D28D100A3E605 /* HBToken.m */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		6964F123F7A313404DEED71E /* HBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPost.h; sourceTree = "<group>"; };
 		6964F298405C6A7D3D2D5A59 /* HBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPost.m; sourceTree = "<group>"; };
+		6964F39A36FD68A268A9A211 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = "<group>"; };
 		6964F54CB057DC183A36892E /* HBTokenIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenIdentifiers.h; sourceTree = "<group>"; };
 		6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenIdentifiers.m; sourceTree = "<group>"; };
 		D42123FB191D28B200A3E605 /* HBPostParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostParser.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				D4B203B4191A87FF00A9BF5B /* Images.xcassets */,
 				D4B203A3191A87FF00A9BF5B /* Supporting Files */,
 				6964F173FDC6494ABF88000B /* Models */,
+				6964F39A36FD68A268A9A211 /* .travis.yml */,
 			);
 			path = hipblog;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				D4B203AD191A87FF00A9BF5B /* Credits.rtf in Resources */,
 				D4B203D5191A893400A9BF5B /* HBMainWindow.xib in Resources */,
 				D4B203B3191A87FF00A9BF5B /* MainMenu.xib in Resources */,
+				6964FC420303532CBECA277A /* .travis.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
