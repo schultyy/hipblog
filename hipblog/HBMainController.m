@@ -31,6 +31,7 @@
 -(void)awakeFromNib {
     [super awakeFromNib];
     [[self editorView] setContentView: self.editorController.view];
+    [[self window] setTitle: directoryUrl.path];
 }
 
 -(NSArray *) readPosts {
