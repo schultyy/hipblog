@@ -7,11 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HBEditorViewController.h"
 
 @interface HBMainController : NSWindowController {
 
     NSURL *directoryUrl;
 }
+
+@property IBOutlet NSBox *editorView;
+
+@property (retain) HBEditorViewController *editorController;
 
 - (id)initWitDirectoryPath: (NSURL *) url;
 

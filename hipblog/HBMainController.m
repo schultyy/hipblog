@@ -7,6 +7,7 @@
 //
 
 #import "HBMainController.h"
+#import "HBEditorViewController.h"
 #import "HBPost.h"
 
 @interface HBMainController ()
@@ -20,8 +21,15 @@
     self = [super initWithWindowNibName:@"HBMainWindow"];
     if (self) {
         directoryUrl = url;
+        id editor = [[HBEditorViewController alloc] init];
+        [self setEditorController: editor];
     }
     return self;
+}
+
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    [[self editorView] setContentView: self.editorController.view];
 }
 
 -(NSArray *) readPosts {
