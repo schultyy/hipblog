@@ -4,6 +4,7 @@
 //
 
 #import "HBPost.h"
+#import "HBFrontMatter.h"
 
 
 @implementation HBPost
@@ -11,28 +12,10 @@
 -(id) init {
     self = [super init];
     if(self) {
-        [self setTitle:@""];
+        [self setFrontMatter:[[HBFrontMatter alloc] init]];
         [self setContent:@""];
-        [self setLayout:@""];
-        [self setCategories:@""];
-        [self setDate: [NSDate date]];
     }
     return self;
-}
-
-+(HBPost *) fromFile: (NSString *) filePath {
-    NSLog(@"PATH: %@", [filePath class]);
-    NSLog(@"PATH: %@", filePath);
-    NSString *contents = [NSString stringWithContentsOfFile:filePath encoding:NSStringEncodingConversionAllowLossy error:nil];
-    NSLog(@"contents: %@", contents);
-    return nil;
-}
-
-+(void) parseFile: (NSString *) file {
-}
-
-+(NSString *) parseTitleFrom: (NSString *) content {
-    return nil;
 }
 
 @end

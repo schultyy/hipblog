@@ -14,7 +14,9 @@
 -(id) initWithString: (NSString *) stream {
     self = [super init];
     if(self) {
-        contentStream = stream;
+        NSRange limRange = [stream rangeOfString:@"---" options:NSBackwardsSearch];
+        NSRange frontMatterRange = NSMakeRange(0, limRange.location + 3);
+        contentStream = [stream substringWithRange:frontMatterRange];
         current = 0;
         separatorCount = 0;
     }
@@ -49,11 +51,11 @@
                 current++;
                 return currentToken;
             case '-':
-                if(separatorCount < 2) {
-                    separatorCount++;
+                if(separatorCharCount < 2) {
+                    separatorCharCount++;
                     break;
                 } else {
-                    separatorCount = 0;
+                    separatorCharCount = 0;
                     currentToken = [[HBToken alloc] init];
                     [currentToken setIdentifier: HB_SEPARATOR_IDENTIFIER];
                     [currentToken setValue:@"---"];

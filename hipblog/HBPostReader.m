@@ -32,7 +32,7 @@
         }
         else {
             HBPostLexer *lexer = [[HBPostLexer alloc] initWithString:fileContent];
-            HBPostParser *parser = [[HBPostParser alloc] initWithTokenSource:lexer];
+            HBPostParser *parser = [[HBPostParser alloc] initWithTokenSource:lexer andFileContent:fileContent];
 
             HBPost *freshlyParsedPost = [parser parse:nil];
             [postsArray addObject:freshlyParsedPost];

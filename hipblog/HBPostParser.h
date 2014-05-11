@@ -13,11 +13,11 @@
 
 @interface HBPostParser : NSObject {
     NSObject<HBTokenSource> *tokenSource;
-    BOOL frontMatterActive;
+    NSString *fileContent;
 }
 
--(id) initWithTokenSource: (NSObject<HBTokenSource> *) source;
+-(id) initWithTokenSource: (NSObject<HBTokenSource> *) source andFileContent: (NSString *) content;
 
--(HBPost *) parse: (NSError **) error;
+-(HBPost *) parse:(NSError **)error;
 
 @end

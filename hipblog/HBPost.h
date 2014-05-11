@@ -5,21 +5,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class HBFrontMatter;
+
 
 @interface HBPost : NSObject
 
 @property (retain) NSURL *filepath;
 
-@property (retain) NSString *title;
+@property (retain) HBFrontMatter *frontMatter;
 
 @property (retain) NSString *content;
-
-@property (retain) NSString *layout;
-
-@property (retain) NSString *categories;
-
-@property (retain) NSDate *date;
-
-+(HBPost *) fromFile: (NSString *) filePath;
 
 @end

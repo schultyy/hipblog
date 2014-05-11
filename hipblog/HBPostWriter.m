@@ -5,6 +5,7 @@
 
 #import "HBPostWriter.h"
 #import "HBPost.h"
+#import "HBFrontMatter.h"
 
 
 @implementation HBPostWriter {
@@ -13,12 +14,12 @@
 
 +(void) writeToFile: (NSString *) directoryPath post: (HBPost *) post {
     NSMutableString *fileContent = [[NSMutableString alloc] init];
-
+    
     //frontmatter
     [fileContent appendString:@"---\n"];
-    [fileContent appendString: [NSString stringWithFormat:@"title: %@\n", post.title]];
-    [fileContent appendString: [NSString stringWithFormat:@"layout: %@\n", post.layout]];
-    [fileContent appendString: [NSString stringWithFormat:@"categories: %@\n", post.categories]];
+    [fileContent appendString: [NSString stringWithFormat:@"title: %@\n", post.frontMatter.title]];
+    [fileContent appendString: [NSString stringWithFormat:@"layout: %@\n", post.frontMatter.layout]];
+    [fileContent appendString: [NSString stringWithFormat:@"categories: %@\n", post.frontMatter.categories]];
     [fileContent appendString:@"---\n"];
     //Content
     [fileContent appendString: post.content];
@@ -27,9 +28,9 @@
 
     [formatter setDateFormat:@"yyyy-MM-dd"];
 
-    NSString *dateStr = [formatter stringFromDate:post.date];
+    NSString *dateStr = [formatter stringFromDate:post.frontMatter.date];
 
-    NSString *fileName = [NSString stringWithFormat:@"%@-%@.md", dateStr, post.title];
+    NSString *fileName = [NSString stringWithFormat:@"%@-%@.md", dateStr, post.frontMatter.title];
 
     NSString *absolutePath = [directoryPath stringByAppendingPathComponent:fileName];
 
