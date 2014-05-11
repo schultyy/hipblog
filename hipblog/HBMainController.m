@@ -10,6 +10,7 @@
 #import "HBEditorViewController.h"
 #import "HBPost.h"
 #import "HBPostWriter.h"
+#import "HBFileListViewController.h"
 
 @interface HBMainController ()
 
@@ -24,6 +25,7 @@
         directoryUrl = url;
         id editor = [[HBEditorViewController alloc] init];
         [self setEditorController: editor];
+        [self setFileListController:[[HBFileListViewController alloc] initWithPath: url.path]];
     }
     return self;
 }
@@ -31,6 +33,7 @@
 -(void)awakeFromNib {
     [super awakeFromNib];
     [[self editorView] setContentView: self.editorController.view];
+    [[self fileListView] setContentView: self.fileListController.view];
     [[self window] setTitle: directoryUrl.path];
 }
 

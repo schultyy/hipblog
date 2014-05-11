@@ -1,0 +1,10 @@
+PODS:
+  - Underscore.m (0.2.1)
+
+DEPENDENCIES:
+  - Underscore.m (~> 0.2.1)
+
+SPEC CHECKSUMS:
+  Underscore.m: 593ea54a19d3cc4439387a83d36eb7ba6ffd1707
+
+COCOAPODS: 0.32.1

@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "HBEditorViewController.h"
 
+@class HBFileListViewController;
+
 @interface HBMainController : NSWindowController {
 
     NSURL *directoryUrl;
@@ -16,7 +18,11 @@
 
 @property IBOutlet NSBox *editorView;
 
+@property IBOutlet NSBox *fileListView;
+
 @property (retain) HBEditorViewController *editorController;
+
+@property (retain) HBFileListViewController *fileListController;
 
 - (id)initWitDirectoryPath: (NSURL *) url;
 
