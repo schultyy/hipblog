@@ -7,5 +7,6 @@
 
 
 @interface HBPostReader : NSObject
++(NSArray *) forbidden;
 +(NSArray *) readPosts: (NSString *) directoryPath;
 @end

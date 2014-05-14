@@ -11,6 +11,11 @@
 
 @implementation HBPostReader
 
++(NSArray *) forbidden {
+    NSArray *excluded = @[ @".git" ];
+    return excluded;
+}
+
 +(NSArray *) readPosts: (NSString *) directoryPath {
     NSMutableArray *postsArray = [NSMutableArray array];
 
@@ -23,19 +28,21 @@
     }
     [files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSError *error = nil;
-        NSString *fullPath = [directoryPath stringByAppendingPathComponent:obj];
-        NSString * fileContent = [NSString stringWithContentsOfFile:fullPath
-                                                           encoding:NSUTF8StringEncoding
-                                                              error:&error];
-        if(error) {
-            NSLog(@"ERROR WHILE READING FILE: %@", [error localizedDescription]);
-        }
-        else {
-            HBPostLexer *lexer = [[HBPostLexer alloc] initWithString:fileContent];
-            HBPostParser *parser = [[HBPostParser alloc] initWithTokenSource:lexer andFileContent:fileContent];
-
-            HBPost *freshlyParsedPost = [parser parse:nil];
-            [postsArray addObject:freshlyParsedPost];
+        if(![[HBPostReader forbidden] containsObject:obj]) {
+            NSString *fullPath = [directoryPath stringByAppendingPathComponent:obj];
+            NSString * fileContent = [NSString stringWithContentsOfFile:fullPath
+                                                               encoding:NSUTF8StringEncoding
+                                                                  error:&error];
+            if(error) {
+                NSLog(@"ERROR WHILE READING FILE: %@", [error localizedDescription]);
+            }
+            else {
+                HBPostLexer *lexer = [[HBPostLexer alloc] initWithString:fileContent];
+                HBPostParser *parser = [[HBPostParser alloc] initWithTokenSource:lexer andFileContent:fileContent];
+                
+                HBPost *freshlyParsedPost = [parser parse:nil];
+                [postsArray addObject:freshlyParsedPost];
+            }
         }
     }];
 

@@ -23,7 +23,8 @@
 }
 
 -(void) reload {
-    NSArray *posts = [HBPostReader readPosts:directoryPath];
+
+    NSArray *posts = [HBPostReader readPosts: [directoryPath stringByAppendingPathComponent:@"_posts"]];
     [self setPosts:posts];
 }
 

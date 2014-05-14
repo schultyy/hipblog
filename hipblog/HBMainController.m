@@ -37,25 +37,6 @@
     [[self window] setTitle: directoryUrl.path];
 }
 
-//-(NSArray *) readPosts {
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    id str = [[[NSString alloc] initWithString:[directoryUrl path]] stringByAppendingPathComponent:@"_posts"];
-//    return [fileManager contentsOfDirectoryAtPath:str error:nil];
-//}
-//
-//- (void)windowDidLoad
-//{
-//    [super windowDidLoad];
-//    NSArray *arr = [self readPosts];
-//    for(NSUInteger i = 0; i < arr.count; i++) {
-//        id current = [arr objectAtIndex:i];
-//
-//        id posts = [directoryUrl.path stringByAppendingPathComponent:@"_posts"];
-//
-//        id absolutePath = [posts stringByAppendingPathComponent:current];
-//    }
-//}
-
 -(void)saveCurrentPost {
     id posts = [directoryUrl.path stringByAppendingPathComponent:@"_posts"];
 
