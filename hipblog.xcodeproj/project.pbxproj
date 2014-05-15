@@ -18,7 +18,6 @@
 		D41953D2191E258100827AEC /* HBEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41953D1191E258100827AEC /* HBEditorViewController.m */; };
 		D41953D4191E259200827AEC /* HBEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41953D3191E259200827AEC /* HBEditorView.xib */; };
 		D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FC191D28B200A3E605 /* HBPostParser.m */; };
-		D4212400191D28BE00A3E605 /* HBPostLexer.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FF191D28BE00A3E605 /* HBPostLexer.m */; };
 		D4212403191D28D100A3E605 /* HBToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212402191D28D100A3E605 /* HBToken.m */; };
 		D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212405191D2A1000A3E605 /* HBLexerTest.m */; };
 		D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212408191D3F6600A3E605 /* HBParserTest.m */; };
@@ -69,13 +68,10 @@
 		D41953D3191E259200827AEC /* HBEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBEditorView.xib; sourceTree = "<group>"; };
 		D42123FB191D28B200A3E605 /* HBPostParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostParser.h; sourceTree = "<group>"; };
 		D42123FC191D28B200A3E605 /* HBPostParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostParser.m; sourceTree = "<group>"; };
-		D42123FE191D28BE00A3E605 /* HBPostLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostLexer.h; sourceTree = "<group>"; };
-		D42123FF191D28BE00A3E605 /* HBPostLexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostLexer.m; sourceTree = "<group>"; };
 		D4212401191D28D100A3E605 /* HBToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBToken.h; sourceTree = "<group>"; };
 		D4212402191D28D100A3E605 /* HBToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBToken.m; sourceTree = "<group>"; };
 		D4212405191D2A1000A3E605 /* HBLexerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBLexerTest.m; sourceTree = "<group>"; };
 		D4212408191D3F6600A3E605 /* HBParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBParserTest.m; sourceTree = "<group>"; };
-		D421240A191D3F9E00A3E605 /* HBTokenSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTokenSource.h; sourceTree = "<group>"; };
 		D421240B191D3FF100A3E605 /* HBTokenSourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenSourceMock.h; sourceTree = "<group>"; };
 		D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenSourceMock.m; sourceTree = "<group>"; };
 		D47B9D19191FFC1C00A54409 /* HBFileListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBFileListView.xib; sourceTree = "<group>"; };
@@ -142,11 +138,8 @@
 			children = (
 				D42123FB191D28B200A3E605 /* HBPostParser.h */,
 				D42123FC191D28B200A3E605 /* HBPostParser.m */,
-				D42123FE191D28BE00A3E605 /* HBPostLexer.h */,
-				D42123FF191D28BE00A3E605 /* HBPostLexer.m */,
 				D4212401191D28D100A3E605 /* HBToken.h */,
 				D4212402191D28D100A3E605 /* HBToken.m */,
-				D421240A191D3F9E00A3E605 /* HBTokenSource.h */,
 				6964F54CB057DC183A36892E /* HBTokenIdentifiers.h */,
 				6964F73DEA6090928170F367 /* HBTokenIdentifiers.m */,
 				6964F8BB7380E803C050A7E6 /* HBPostWriter.m */,
@@ -413,7 +406,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4212403191D28D100A3E605 /* HBToken.m in Sources */,
-				D4212400191D28BE00A3E605 /* HBPostLexer.m in Sources */,
 				D4B203B0191A87FF00A9BF5B /* HBAppDelegate.m in Sources */,
 				D4B203D4191A893400A9BF5B /* HBMainController.m in Sources */,
 				D4B203A9191A87FF00A9BF5B /* main.m in Sources */,

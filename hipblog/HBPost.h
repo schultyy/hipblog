@@ -16,4 +16,5 @@
 
 @property (retain) NSString *content;
 
++ (HBPost *)postFromHash:(NSDictionary *)dictionary andString:(id)content;
 @end

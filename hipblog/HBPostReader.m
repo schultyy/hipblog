@@ -4,7 +4,6 @@
 //
 
 #import "HBPostReader.h"
-#import "HBPostLexer.h"
 #import "HBPostParser.h"
 #import "HBPost.h"
 
@@ -37,16 +36,25 @@
                 NSLog(@"ERROR WHILE READING FILE: %@", [error localizedDescription]);
             }
             else {
-                HBPostLexer *lexer = [[HBPostLexer alloc] initWithString:fileContent];
-                HBPostParser *parser = [[HBPostParser alloc] initWithTokenSource:lexer andFileContent:fileContent];
-                
-                HBPost *freshlyParsedPost = [parser parse:nil];
+                NSRange limRange = [fileContent rangeOfString:@"---" options:NSBackwardsSearch];
+                NSRange frontMatterRange = NSMakeRange(0, limRange.location + 3);
+                NSString *frontMatter = [fileContent substringWithRange:frontMatterRange];
+
+                limRange = [fileContent rangeOfString:@"---\n" options:NSBackwardsSearch];
+                NSUInteger startPosition = limRange.location + limRange.length;
+                frontMatterRange = NSMakeRange(startPosition, [fileContent length] - startPosition);
+                id contentStream = [fileContent substringWithRange:frontMatterRange];
+
+
+                HBPostParser *parser = [[HBPostParser alloc] initWithFrontmatter:frontMatter];
+                NSDictionary *frontMatterDict = [parser parse:nil];
+                HBPost *freshlyParsedPost = [HBPost postFromHash: frontMatterDict andString: contentStream];
                 [postsArray addObject:freshlyParsedPost];
             }
         }
     }];
 
     return postsArray;
-}
 
+}
 @end

@@ -14,41 +14,71 @@
 
 @implementation HBPostParser
 
--(id) initWithTokenSource: (NSObject<HBTokenSource> *) source andFileContent: (NSString *) content {
+-(id) initWithFrontmatter: (NSString *) frontMatter {
     self = [super init];
     if(self) {
-        tokenSource = source;
-        fileContent = content;
+        fileContent = frontMatter;
+        current = 0;
     }
     return self;
 }
 
--(HBPost *) parse:(NSError **)error {
-    HBPost *post = [[HBPost alloc] init];
-    HBFrontMatter *frontMatter = [post frontMatter];
-    NSRange limRange = [fileContent rangeOfString:@"---\n" options:NSBackwardsSearch];
-    NSUInteger startPosition = limRange.location + limRange.length;
-    NSRange frontMatterRange = NSMakeRange(startPosition, [fileContent length] - startPosition);
-    id contentStream = [fileContent substringWithRange:frontMatterRange];
-    [post setContent: contentStream];
-    HBToken *token = [tokenSource nextToken];
+-(NSDictionary *) parse:(NSError **)error {
+    [self consume];
 
-    while ([token identifier] != HB_EOF_IDENTIFIER) {
-        if([token identifier] == HB_TEXT_IDENTIFIER) {
-            if([[[token value] lowercaseString] isEqualToString:@"title"] ||
-               [[[token value] lowercaseString] isEqualToString:@"layout"]) {
-                NSString *property = [[token value] lowercaseString];
-                HBToken *colonToken = [tokenSource nextToken];
-                if([colonToken identifier] == HB_COLON_IDENTIFIER) {
-                    HBToken *valueToken = [tokenSource nextToken];
-                    [frontMatter setValue:valueToken.value forKey:property];
-                }
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+
+    NSMutableString *buffer = [NSMutableString string];
+    NSString *tempKey = nil;
+    while([self canConsume]) {
+        if(!allowDash && currentChar == '-') {
+            if([self lookahead] == '\n') {
+                [self consume];
+                [self consume];
+                allowDash = YES;
             }
+            [self consume];
+            continue;
         }
-        token = [tokenSource nextToken];
-    }
+        if(!allowColon && currentChar == ':') {
+            tempKey = [[NSString alloc] initWithString:buffer];
+            //tempKey = [buffer copy];
+            [buffer setString:@""];
+            allowColon = YES;
+        }
+        else if(currentChar == '\n') {
+            NSString *tempValue = [[NSString alloc] initWithString: buffer];
+            [buffer setString:@""];
+            allowColon = NO;
+            [dictionary setObject: [tempValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]]
+                           forKey: [tempKey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 
-    return post;
+        }
+        else {
+            [buffer appendString: [NSString stringWithCharacters:&currentChar length:1]];
+        }
+
+        [self consume];
+    }
+    NSLog(@"DICT: %@", dictionary);
+    return dictionary;
+}
+
+-(unichar) lookahead {
+    if(current + 1 < [fileContent length]) {
+        return [fileContent characterAtIndex: current + 1];
+    }
+    return EOF;
+}
+
+-(void) consume {
+    if([self canConsume]) {
+        currentChar = [fileContent characterAtIndex:current++];
+    }
+}
+
+-(BOOL) canConsume {
+    return current < [fileContent length];
 }
 
 @end

@@ -7,17 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HBTokenSource.h"
 
 @class HBPost;
 
 @interface HBPostParser : NSObject {
-    NSObject<HBTokenSource> *tokenSource;
     NSString *fileContent;
+    NSUInteger current;
+    unichar currentChar;
+    BOOL allowDash;
+    BOOL allowColon;
 }
 
--(id) initWithTokenSource: (NSObject<HBTokenSource> *) source andFileContent: (NSString *) content;
+-(id) initWithFrontmatter: (NSString *) frontMatter;
 
--(HBPost *) parse:(NSError **)error;
+-(NSDictionary *) parse:(NSError **)error;
 
 @end

@@ -15,53 +15,76 @@
 #import "HBFrontMatter.h"
 
 @interface HBParserTest : XCTestCase {
-    HBTokenSourceMock *tokenSource;
     HBPostParser *parser;
+    NSString *testFrontmatter;
+    NSDictionary *hash;
 }
 
 @end
 
 @implementation HBParserTest
 
-
--(void) testParseBlogpostWithTitle {
-    //preface
-    tokenSource = [[HBTokenSourceMock alloc] init];
-    parser = [[HBPostParser alloc] initWithTokenSource: tokenSource andFileContent:@"---\ntitle: Hello\n---\nCONTENTS"];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Title"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_COLON_IDENTIFIER andValue:@":"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Hello"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"CONTENTS"]];
-    HBPost *post = [parser parse: nil];
-    //asserts
-
-    XCTAssertEqualObjects([post.frontMatter title], @"Hello");
-    XCTAssertEqualObjects([post content], @"CONTENTS");
+-(void) setUp {
+    [super setUp];
+    testFrontmatter = @"---\n\
+    layout: post\n\
+    title: \"Learning group 15.04.2014 - Zen of Ruby\"\n\
+    date: 2014-04-15 19:15:00\n\
+    published: true\n\
+    category: materials\n\
+    ---";
+    parser = [[HBPostParser alloc] initWithFrontmatter: testFrontmatter];
+    hash = [parser parse:nil];
 }
 
--(void) testParseBlogpostWithTitleAndLayout {
-    //preface
-    tokenSource = [[HBTokenSourceMock alloc] init];
-    parser = [[HBPostParser alloc] initWithTokenSource: tokenSource andFileContent:@"---\ntitle: Hello\nlayout: post\n---\nCONTENTS\nFOO BAR BAZ"];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Title"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_COLON_IDENTIFIER andValue:@":"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"Hello"]];
-    
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"layout"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_COLON_IDENTIFIER andValue:@":"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"post"]];
-    
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_SEPARATOR_IDENTIFIER andValue:@"---"]];
-    [tokenSource addToken: [[HBToken alloc]initWithIdentifier: HB_TEXT_IDENTIFIER andValue:@"CONTENTS\nFOO BAR BAZ"]];
-    HBPost *post = [parser parse: nil];
-    //asserts
-    
-    XCTAssertEqualObjects([post.frontMatter title], @"Hello");
-    XCTAssertEqualObjects([post content], @"CONTENTS\nFOO BAR BAZ");
-    XCTAssertEqualObjects([post.frontMatter layout], @"post");
+-(void) testParseHashNotNil {
+    XCTAssertNotNil(hash);
+}
+
+-(void) testHasLayoutKey {
+    XCTAssertTrue([[hash allKeys] containsObject:@"layout"]);
+}
+
+-(void) testParsesLayout {
+
+    NSString *layout = [hash objectForKey:@"layout"];
+    XCTAssertEqualObjects(layout, @"post");
+}
+
+-(void) testHasTitleKey {
+    XCTAssertTrue([[hash allKeys] containsObject:@"title"]);
+}
+
+-(void) testParsesTitle {
+    NSString *title = [hash objectForKey:@"title"];
+    XCTAssertEqualObjects(title, @"\"Learning group 15.04.2014 - Zen of Ruby\"");
+}
+
+-(void) testHasDateKey {
+    XCTAssertTrue([[hash allKeys] containsObject:@"date"]);
+}
+
+-(void) testParsesDate {
+    NSString *date = [hash objectForKey:@"date"];
+    XCTAssertEqualObjects(date, @"2014-04-15 19:15:00");
+}
+
+-(void) testHasPublishedKey {
+    XCTAssertTrue([[hash allKeys] containsObject:@"published"]);
+}
+
+-(void) testParsesPublished {
+    NSString *published = [hash objectForKey:@"published"];
+    XCTAssertEqualObjects(published, @"true");
+}
+
+-(void) testHasCategoryKey {
+    XCTAssertTrue([[hash allKeys] containsObject:@"category"]);
+}
+
+-(void) testParsesCategory {
+    NSString *category = [hash objectForKey:@"category"];
+    XCTAssertEqualObjects(category, @"materials");
 }
 
 @end
