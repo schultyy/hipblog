@@ -12,7 +12,7 @@
 
 }
 
-+(void) writeToFile: (NSString *) directoryPath post: (HBPost *) post {
++(void) writeToFile: (NSString *) absolutePath post: (HBPost *) post {
     NSMutableString *fileContent = [[NSMutableString alloc] init];
     
     //frontmatter
@@ -23,16 +23,6 @@
     [fileContent appendString:@"---\n"];
     //Content
     [fileContent appendString: post.content];
-
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-
-    NSString *dateStr = [formatter stringFromDate:post.frontMatter.date];
-
-    NSString *fileName = [NSString stringWithFormat:@"%@-%@.md", dateStr, post.frontMatter.title];
-
-    NSString *absolutePath = [directoryPath stringByAppendingPathComponent:fileName];
 
     [fileContent writeToFile: absolutePath
                   atomically: NO

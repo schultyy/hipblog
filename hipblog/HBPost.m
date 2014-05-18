@@ -18,6 +18,18 @@
     return self;
 }
 
+-(NSString *) filename {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+
+    NSString *dateStr = [formatter stringFromDate: self.frontMatter.date];
+
+    NSString *cleanedTitle = [[[self frontMatter] title] stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+
+    return [NSString stringWithFormat:@"%@-%@.md", dateStr, cleanedTitle];
+}
+
 + (HBPost *)postFromHash:(NSDictionary *)dictionary andString:(id) content {
     HBPost *freshPost = [[HBPost alloc] init];
     HBFrontMatter *matter = [freshPost frontMatter];

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6964F147F5DB6B5F26077B2C /* HBFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FB42D95A18A0C296BA9F /* HBFileListViewController.m */; };
 		6964F2692022CECCC5B48CBD /* HBFrontMatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F240477F9D610AB2901A /* HBFrontMatter.m */; };
 		6964F2D83FC65B2E59742FE7 /* HBPostReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FDD4942509ECC44B1C8E /* HBPostReader.m */; };
 		6964F40DF8C75E52E5C523B8 /* HBPostWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F8BB7380E803C050A7E6 /* HBPostWriter.m */; };
@@ -22,7 +21,6 @@
 		D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212405191D2A1000A3E605 /* HBLexerTest.m */; };
 		D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212408191D3F6600A3E605 /* HBParserTest.m */; };
 		D421240D191D3FF100A3E605 /* HBTokenSourceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */; };
-		D47B9D1A191FFC1C00A54409 /* HBFileListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47B9D19191FFC1C00A54409 /* HBFileListView.xib */; };
 		D4B2039D191A87FF00A9BF5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2039C191A87FF00A9BF5B /* Cocoa.framework */; };
 		D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B203A5191A87FF00A9BF5B /* InfoPlist.strings */; };
 		D4B203A9191A87FF00A9BF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203A8191A87FF00A9BF5B /* main.m */; };
@@ -60,9 +58,7 @@
 		6964F7E868F14F54FD764E5C /* HBFrontMatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFrontMatter.h; sourceTree = "<group>"; };
 		6964F8BB7380E803C050A7E6 /* HBPostWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostWriter.m; sourceTree = "<group>"; };
 		6964F9EBE146221F0DAEAAC5 /* HBPostWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostWriter.h; sourceTree = "<group>"; };
-		6964FB42D95A18A0C296BA9F /* HBFileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFileListViewController.m; sourceTree = "<group>"; };
 		6964FDD4942509ECC44B1C8E /* HBPostReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostReader.m; sourceTree = "<group>"; };
-		6964FE9F9847C6896BA4CCE7 /* HBFileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFileListViewController.h; sourceTree = "<group>"; };
 		D41953D0191E258100827AEC /* HBEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBEditorViewController.h; sourceTree = "<group>"; };
 		D41953D1191E258100827AEC /* HBEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBEditorViewController.m; sourceTree = "<group>"; };
 		D41953D3191E259200827AEC /* HBEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBEditorView.xib; sourceTree = "<group>"; };
@@ -74,7 +70,6 @@
 		D4212408191D3F6600A3E605 /* HBParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBParserTest.m; sourceTree = "<group>"; };
 		D421240B191D3FF100A3E605 /* HBTokenSourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenSourceMock.h; sourceTree = "<group>"; };
 		D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenSourceMock.m; sourceTree = "<group>"; };
-		D47B9D19191FFC1C00A54409 /* HBFileListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBFileListView.xib; sourceTree = "<group>"; };
 		D4B20399191A87FF00A9BF5B /* hipblog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hipblog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B2039C191A87FF00A9BF5B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4B2039F191A87FF00A9BF5B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -247,7 +242,6 @@
 				D4B203D3191A893400A9BF5B /* HBMainWindow.xib */,
 				D4B203B1191A87FF00A9BF5B /* MainMenu.xib */,
 				D41953D3191E259200827AEC /* HBEditorView.xib */,
-				D47B9D19191FFC1C00A54409 /* HBFileListView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -259,8 +253,6 @@
 				D4B203D2191A893400A9BF5B /* HBMainController.m */,
 				D41953D0191E258100827AEC /* HBEditorViewController.h */,
 				D41953D1191E258100827AEC /* HBEditorViewController.m */,
-				6964FB42D95A18A0C296BA9F /* HBFileListViewController.m */,
-				6964FE9F9847C6896BA4CCE7 /* HBFileListViewController.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -331,8 +323,6 @@
 			mainGroup = D4B20390191A87FF00A9BF5B;
 			productRefGroup = D4B2039A191A87FF00A9BF5B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				D4B20398191A87FF00A9BF5B /* hipblog */,
@@ -350,7 +340,6 @@
 				D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */,
 				D4B203B5191A87FF00A9BF5B /* Images.xcassets in Resources */,
 				D4B203AD191A87FF00A9BF5B /* Credits.rtf in Resources */,
-				D47B9D1A191FFC1C00A54409 /* HBFileListView.xib in Resources */,
 				D4B203D5191A893400A9BF5B /* HBMainWindow.xib in Resources */,
 				D4B203B3191A87FF00A9BF5B /* MainMenu.xib in Resources */,
 				6964FC420303532CBECA277A /* .travis.yml in Resources */,
@@ -414,7 +403,6 @@
 				D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */,
 				6964F56887143DBC8EB7F099 /* HBTokenIdentifiers.m in Sources */,
 				6964F40DF8C75E52E5C523B8 /* HBPostWriter.m in Sources */,
-				6964F147F5DB6B5F26077B2C /* HBFileListViewController.m in Sources */,
 				6964F2D83FC65B2E59742FE7 /* HBPostReader.m in Sources */,
 				6964F2692022CECCC5B48CBD /* HBFrontMatter.m in Sources */,
 			);

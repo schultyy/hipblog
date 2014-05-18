@@ -10,7 +10,6 @@
 #import "HBEditorViewController.h"
 #import "HBPost.h"
 #import "HBPostWriter.h"
-#import "HBFileListViewController.h"
 
 @interface HBMainController ()
 
@@ -18,14 +17,12 @@
 
 @implementation HBMainController
 
-- (id)initWitDirectoryPath: (NSURL *) url
+- (id)init
 {
     self = [super initWithWindowNibName:@"HBMainWindow"];
     if (self) {
-        directoryUrl = url;
         id editor = [[HBEditorViewController alloc] init];
         [self setEditorController: editor];
-        [self setFileListController:[[HBFileListViewController alloc] initWithPath: url.path]];
     }
     return self;
 }
@@ -33,33 +30,28 @@
 -(void)awakeFromNib {
     [super awakeFromNib];
     [[self editorView] setContentView: self.editorController.view];
-    [[self fileListView] setContentView: self.fileListController.view];
-    [[self window] setTitle: directoryUrl.path];
-
-    [[self fileListController] addObserver:self
-                          forKeyPath:@"selectionIndexes"
-                             options:NSKeyValueObservingOptionNew
-                             context:nil];
+    [[self window] setTitle: @"New blogpost"];
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if([keyPath isEqualToString:@"selectionIndexes"]) {
-        NSUInteger selectionIndex = [[[self fileListController] selectionIndexes] firstIndex];
-        if(selectionIndex == NSNotFound){
-            return;
-        }
-        HBPost *selectedPost = [[[self fileListController] posts] objectAtIndex:selectionIndex];
-        
-        [[self editorController] setCurrentPost:selectedPost];
-    }
+-(void)newBlogpost {
+    [[self editorController] setCurrentPost:[[HBPost alloc] init]];
 }
 
 -(void)saveCurrentPost {
-    id posts = [directoryUrl.path stringByAppendingPathComponent:@"_posts"];
 
-    HBPost *post = [[self editorController] currentPost];
+    HBPost *currentPost = [[self editorController] currentPost];
 
-    [HBPostWriter writeToFile:posts post: post];
+    NSSavePanel *savePanel = [[NSSavePanel alloc] init];
+
+    [savePanel setCanCreateDirectories:YES];
+
+    [savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"md"]];
+
+    [savePanel setNameFieldStringValue:currentPost.filename];
+
+    if([savePanel runModal] == NSOKButton) {
+        [HBPostWriter writeToFile:[savePanel URL].path post:currentPost];
+    }
 }
 
 @end

@@ -11,19 +11,13 @@
 
 @class HBFileListViewController;
 
-@interface HBMainController : NSWindowController {
-    NSURL *directoryUrl;
-}
+@interface HBMainController : NSWindowController
 
 @property IBOutlet NSBox *editorView;
 
-@property IBOutlet NSBox *fileListView;
-
 @property (retain) HBEditorViewController *editorController;
 
-@property (retain) HBFileListViewController *fileListController;
-
-- (id)initWitDirectoryPath: (NSURL *) url;
+-(void) newBlogpost;
 
 -(void) saveCurrentPost;
 

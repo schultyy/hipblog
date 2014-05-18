@@ -7,7 +7,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HBMainController">
             <connections>
                 <outlet property="editorView" destination="f0U-e0-koh" id="cNh-NN-gdg"/>
-                <outlet property="fileListView" destination="jDm-4i-TjQ" id="vCU-O0-kGK"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -17,26 +16,16 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="807" height="507"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="807" height="507"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box autoresizesSubviews="NO" ambiguous="YES" misplaced="YES" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="f0U-e0-koh">
-                        <rect key="frame" x="279" y="-4" width="531" height="513"/>
+                    <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="f0U-e0-koh">
+                        <rect key="frame" x="-3" y="-4" width="813" height="513"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="529" height="511"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </box>
-                    <box autoresizesSubviews="NO" ambiguous="YES" misplaced="YES" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="jDm-4i-TjQ">
-                        <rect key="frame" x="-3" y="-4" width="280" height="513"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="278" height="511"/>
+                            <rect key="frame" x="1" y="1" width="811" height="511"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -44,14 +33,10 @@
                     </box>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="f0U-e0-koh" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="2iI-dC-czD"/>
-                    <constraint firstItem="jDm-4i-TjQ" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="2lV-oi-9Ky"/>
-                    <constraint firstAttribute="bottom" secondItem="f0U-e0-koh" secondAttribute="bottom" id="5dZ-PM-bsc"/>
-                    <constraint firstAttribute="bottom" secondItem="jDm-4i-TjQ" secondAttribute="bottom" id="8UP-gF-23S"/>
-                    <constraint firstItem="jDm-4i-TjQ" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="C1K-nG-xjT"/>
-                    <constraint firstAttribute="trailing" secondItem="f0U-e0-koh" secondAttribute="trailing" id="LP4-BF-yuK"/>
-                    <constraint firstItem="f0U-e0-koh" firstAttribute="leading" secondItem="jDm-4i-TjQ" secondAttribute="trailing" constant="8" id="aFA-3C-rsu"/>
-                    <constraint firstItem="f0U-e0-koh" firstAttribute="leading" secondItem="jDm-4i-TjQ" secondAttribute="trailing" constant="8" id="bfM-EQ-bZh"/>
+                    <constraint firstAttribute="trailing" secondItem="f0U-e0-koh" secondAttribute="trailing" id="8RN-ry-h0N"/>
+                    <constraint firstAttribute="bottom" secondItem="f0U-e0-koh" secondAttribute="bottom" id="Px3-QX-FcM"/>
+                    <constraint firstItem="f0U-e0-koh" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="V0y-e8-qQG"/>
+                    <constraint firstItem="f0U-e0-koh" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="rRb-xY-LwV"/>
                 </constraints>
             </view>
             <connections>

@@ -15,30 +15,33 @@
 }
 
 -(IBAction) openDirectory:(id)sender {
-    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
-    
-    [openDlg setCanChooseFiles:YES];
-    [openDlg setAllowsMultipleSelection:NO];
-    [openDlg setCanChooseDirectories:YES];
-    [openDlg setCanChooseFiles:NO];
+//    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+//
+//    [openDlg setCanChooseFiles:YES];
+//    [openDlg setAllowsMultipleSelection:NO];
+//    [openDlg setCanChooseDirectories:YES];
+//    [openDlg setCanChooseFiles:NO];
+//
+//    if([openDlg runModal] == NSOKButton)
+//    {
+//        id url = [openDlg directoryURL];
+//        NSLog(@"URL: %@", url);
+//
+//        HBMainController *controller = [[HBMainController alloc] init];
+//        [self setMainController:controller];
+//        [[self mainController] showWindow:self];
+//    }
+}
 
-    if([openDlg runModal] == NSOKButton)
-    {
-        id url = [openDlg directoryURL];
-        NSLog(@"URL: %@", url);
-
-        HBMainController *controller = [[HBMainController alloc] initWitDirectoryPath: url];
-        [self setMainController:controller];
-        [[self mainController] showWindow:self];
-    }
+-(IBAction) createNewBlogpost: (id) sender {
+    HBMainController *newDoc = [[HBMainController alloc] init];
+    [newDoc newBlogpost];
+    [newDoc showWindow:self];
+    [self setMainController:newDoc];
 }
 
 -(IBAction) saveBlogpost:(id)sender{
     [[self mainController] saveCurrentPost];
-}
-
--(BOOL) canSaveBlogpost {
-    return [self mainController] != nil;
 }
 
 @end
