@@ -106,6 +106,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="value" keyPath="self.currentPost.content" id="VQt-mb-f01"/>
+                        <outlet property="delegate" destination="-2" id="0Ig-gI-6US"/>
                     </connections>
                 </textField>
             </subviews>
