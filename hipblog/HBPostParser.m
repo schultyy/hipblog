@@ -60,7 +60,6 @@
 
         [self consume];
     }
-    NSLog(@"DICT: %@", dictionary);
     return dictionary;
 }
 
