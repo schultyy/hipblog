@@ -54,7 +54,6 @@
         NSLog(@"ERROR WHILE READING FILES: %@", [errors localizedDescription]);
     }
     [files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSError *error = nil;
         if(![[HBPostReader forbidden] containsObject:obj]) {
             NSString *fullPath = [directoryPath stringByAppendingPathComponent:obj];
             HBPost *freshlyParsedPost = [HBPostReader readPost:fullPath];
