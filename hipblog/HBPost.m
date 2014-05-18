@@ -24,7 +24,7 @@
 
     NSString *title     = [dictionary objectForKey:@"title"];
     NSString *layout    = [dictionary objectForKey:@"layout"];
-    NSString *category  = [dictionary objectForKey:@"category"];
+    NSString *category  = [dictionary objectForKey:@"categories"];
     NSString *date      = [dictionary objectForKey:@"date"];
     //NSString *published = [dictionary objectForKey:@"published"];
 
