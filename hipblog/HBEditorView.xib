@@ -27,7 +27,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.currentPost.frontMatter.title" id="D6k-nc-6az"/>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.frontMatter.title" id="9cx-mD-Xa7">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                         <outlet property="nextKeyView" destination="j4f-f6-5gq" id="bqO-ir-oEo"/>
                     </connections>
                 </textField>
@@ -43,7 +47,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.currentPost.frontMatter.categories" id="5KW-1y-1Ch"/>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.frontMatter.categories" id="1vr-BH-QjB">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                         <outlet property="nextKeyView" destination="FSG-ox-sbP" id="Bvm-fL-fII"/>
                     </connections>
                 </textField>
@@ -95,7 +103,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.currentPost.frontMatter.layout" id="lZ9-KJ-LMN"/>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.frontMatter.layout" id="Dx2-HN-G7e">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                         <outlet property="nextKeyView" destination="ZV7-nD-3Ll" id="vis-cM-XCf"/>
                     </connections>
                 </textField>
@@ -108,7 +120,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.currentPost.content" id="VQt-mb-f01"/>
+                        <binding destination="-2" name="value" keyPath="self.currentPost.content" id="NXO-gH-Gpd">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                         <outlet property="delegate" destination="-2" id="0Ig-gI-6US"/>
                     </connections>
                 </textField>
