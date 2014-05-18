@@ -16,6 +16,7 @@
 		6EEADD32027F4335A5F8A40D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 072294B5168E4613B91B18AD /* libPods.a */; };
 		D41953D2191E258100827AEC /* HBEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41953D1191E258100827AEC /* HBEditorViewController.m */; };
 		D41953D4191E259200827AEC /* HBEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41953D3191E259200827AEC /* HBEditorView.xib */; };
+		D420FDEF1929652400A47F02 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D420FDEE1929652400A47F02 /* AppIcon.icns */; };
 		D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FC191D28B200A3E605 /* HBPostParser.m */; };
 		D4212403191D28D100A3E605 /* HBToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212402191D28D100A3E605 /* HBToken.m */; };
 		D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212408191D3F6600A3E605 /* HBParserTest.m */; };
@@ -61,6 +62,7 @@
 		D41953D0191E258100827AEC /* HBEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBEditorViewController.h; sourceTree = "<group>"; };
 		D41953D1191E258100827AEC /* HBEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBEditorViewController.m; sourceTree = "<group>"; };
 		D41953D3191E259200827AEC /* HBEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBEditorView.xib; sourceTree = "<group>"; };
+		D420FDEE1929652400A47F02 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		D42123FB191D28B200A3E605 /* HBPostParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPostParser.h; sourceTree = "<group>"; };
 		D42123FC191D28B200A3E605 /* HBPostParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostParser.m; sourceTree = "<group>"; };
 		D4212401191D28D100A3E605 /* HBToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBToken.h; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		D4B203D0191A88A600A9BF5B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D420FDEE1929652400A47F02 /* AppIcon.icns */,
 				D4B203D3191A893400A9BF5B /* HBMainWindow.xib */,
 				D4B203B1191A87FF00A9BF5B /* MainMenu.xib */,
 				D41953D3191E259200827AEC /* HBEditorView.xib */,
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41953D4191E259200827AEC /* HBEditorView.xib in Resources */,
+				D420FDEF1929652400A47F02 /* AppIcon.icns in Resources */,
 				D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */,
 				D4B203B5191A87FF00A9BF5B /* Images.xcassets in Resources */,
 				D4B203AD191A87FF00A9BF5B /* Credits.rtf in Resources */,

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E18327F1-06F9-4C48-8DBA-8F5D066DBF13</string>
+	<key>IDESourceControlProjectName</key>
+	<string>hipblog</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C5465A2-2762-4440-A1B4-F7506B2D9FA6</key>
+		<string>ssh://github.com/schultyy/hipblog.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>hipblog.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C5465A2-2762-4440-A1B4-F7506B2D9FA6</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/schultyy/hipblog.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C5465A2-2762-4440-A1B4-F7506B2D9FA6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C5465A2-2762-4440-A1B4-F7506B2D9FA6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hipblog</string>
+		</dict>
+	</array>
+</dict>
+</plist>
