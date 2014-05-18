@@ -43,7 +43,6 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *date = [formatter dateFromString:dateStr];
-
     [matter setTitle:title];
     [matter setLayout:layout];
     [matter setCategories:category];

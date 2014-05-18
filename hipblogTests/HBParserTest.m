@@ -8,7 +8,6 @@
 
 
 #import <XCTest/XCTest.h>
-#import "HBTokenSourceMock.h"
 #import "HBPostParser.h"
 #import "HBTokenIdentifiers.h"
 #import "HBPost.h"
