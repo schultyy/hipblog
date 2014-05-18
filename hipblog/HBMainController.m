@@ -41,16 +41,20 @@
 
     HBPost *currentPost = [[self editorController] currentPost];
 
-    NSSavePanel *savePanel = [[NSSavePanel alloc] init];
+    if([currentPost filepath]) {
+        [HBPostWriter writeToFile:[currentPost filepath].path post: currentPost];
+    }
+    else {
+        NSSavePanel *savePanel = [[NSSavePanel alloc] init];
 
-    [savePanel setCanCreateDirectories:YES];
-
-    [savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"md"]];
-
-    [savePanel setNameFieldStringValue:currentPost.filename];
-
-    if([savePanel runModal] == NSOKButton) {
-        [HBPostWriter writeToFile:[savePanel URL].path post:currentPost];
+        [savePanel setCanCreateDirectories: NO];
+        [savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"md"]];
+        [savePanel setNameFieldStringValue:currentPost.filename];
+    
+        if([savePanel runModal] == NSOKButton) {
+            [currentPost setFilepath:[savePanel URL]];
+            [HBPostWriter writeToFile:[savePanel URL].path post:currentPost];
+        }
     }
 }
 
