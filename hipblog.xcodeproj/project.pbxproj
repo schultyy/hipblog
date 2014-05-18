@@ -19,9 +19,7 @@
 		D41953D4191E259200827AEC /* HBEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41953D3191E259200827AEC /* HBEditorView.xib */; };
 		D42123FD191D28B200A3E605 /* HBPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D42123FC191D28B200A3E605 /* HBPostParser.m */; };
 		D4212403191D28D100A3E605 /* HBToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212402191D28D100A3E605 /* HBToken.m */; };
-		D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212405191D2A1000A3E605 /* HBLexerTest.m */; };
 		D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4212408191D3F6600A3E605 /* HBParserTest.m */; };
-		D421240D191D3FF100A3E605 /* HBTokenSourceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */; };
 		D47B9D1A191FFC1C00A54409 /* HBFileListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47B9D19191FFC1C00A54409 /* HBFileListView.xib */; };
 		D4B2039D191A87FF00A9BF5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2039C191A87FF00A9BF5B /* Cocoa.framework */; };
 		D4B203A7191A87FF00A9BF5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B203A5191A87FF00A9BF5B /* InfoPlist.strings */; };
@@ -36,6 +34,7 @@
 		D4B203C7191A87FF00A9BF5B /* hipblogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203C6191A87FF00A9BF5B /* hipblogTests.m */; };
 		D4B203D4191A893400A9BF5B /* HBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B203D2191A893400A9BF5B /* HBMainController.m */; };
 		D4B203D5191A893400A9BF5B /* HBMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B203D3191A893400A9BF5B /* HBMainWindow.xib */; };
+		D4EB9CBC19290E85004802FC /* HBPostTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EB9CBB19290E85004802FC /* HBPostTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +69,7 @@
 		D42123FC191D28B200A3E605 /* HBPostParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostParser.m; sourceTree = "<group>"; };
 		D4212401191D28D100A3E605 /* HBToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBToken.h; sourceTree = "<group>"; };
 		D4212402191D28D100A3E605 /* HBToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBToken.m; sourceTree = "<group>"; };
-		D4212405191D2A1000A3E605 /* HBLexerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBLexerTest.m; sourceTree = "<group>"; };
 		D4212408191D3F6600A3E605 /* HBParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBParserTest.m; sourceTree = "<group>"; };
-		D421240B191D3FF100A3E605 /* HBTokenSourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTokenSourceMock.h; sourceTree = "<group>"; };
-		D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTokenSourceMock.m; sourceTree = "<group>"; };
 		D47B9D19191FFC1C00A54409 /* HBFileListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBFileListView.xib; sourceTree = "<group>"; };
 		D4B20399191A87FF00A9BF5B /* hipblog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hipblog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B2039C191A87FF00A9BF5B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -97,6 +93,7 @@
 		D4B203D1191A893400A9BF5B /* HBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBMainController.h; sourceTree = "<group>"; };
 		D4B203D2191A893400A9BF5B /* HBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBMainController.m; sourceTree = "<group>"; };
 		D4B203D3191A893400A9BF5B /* HBMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBMainWindow.xib; sourceTree = "<group>"; };
+		D4EB9CBB19290E85004802FC /* HBPostTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPostTest.m; sourceTree = "<group>"; };
 		E491A5D9569E48EDA5322157 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,10 +221,8 @@
 			children = (
 				D4B203C6191A87FF00A9BF5B /* hipblogTests.m */,
 				D4B203C1191A87FF00A9BF5B /* Supporting Files */,
-				D4212405191D2A1000A3E605 /* HBLexerTest.m */,
 				D4212408191D3F6600A3E605 /* HBParserTest.m */,
-				D421240B191D3FF100A3E605 /* HBTokenSourceMock.h */,
-				D421240C191D3FF100A3E605 /* HBTokenSourceMock.m */,
+				D4EB9CBB19290E85004802FC /* HBPostTest.m */,
 			);
 			path = hipblogTests;
 			sourceTree = "<group>";
@@ -331,8 +326,6 @@
 			mainGroup = D4B20390191A87FF00A9BF5B;
 			productRefGroup = D4B2039A191A87FF00A9BF5B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				D4B20398191A87FF00A9BF5B /* hipblog */,
@@ -424,8 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D421240D191D3FF100A3E605 /* HBTokenSourceMock.m in Sources */,
-				D4212406191D2A1000A3E605 /* HBLexerTest.m in Sources */,
+				D4EB9CBC19290E85004802FC /* HBPostTest.m in Sources */,
 				D4212409191D3F6600A3E605 /* HBParserTest.m in Sources */,
 				D4B203C7191A87FF00A9BF5B /* hipblogTests.m in Sources */,
 			);

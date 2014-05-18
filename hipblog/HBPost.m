@@ -25,14 +25,17 @@
     NSString *title     = [dictionary objectForKey:@"title"];
     NSString *layout    = [dictionary objectForKey:@"layout"];
     NSString *category  = [dictionary objectForKey:@"categories"];
-    NSString *date      = [dictionary objectForKey:@"date"];
+    NSString *dateStr   = [dictionary objectForKey:@"date"];
     //NSString *published = [dictionary objectForKey:@"published"];
 
-
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [formatter dateFromString:dateStr];
     [matter setTitle:title];
     [matter setLayout:layout];
     [matter setCategories:category];
-    [matter setDate: [NSDate dateWithString: date]];
+    [matter setDate: date];
 
     [freshPost setContent: content];
     return freshPost;

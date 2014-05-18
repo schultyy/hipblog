@@ -45,7 +45,6 @@
                 frontMatterRange = NSMakeRange(startPosition, [fileContent length] - startPosition);
                 id contentStream = [fileContent substringWithRange:frontMatterRange];
 
-
                 HBPostParser *parser = [[HBPostParser alloc] initWithFrontmatter:frontMatter];
                 NSDictionary *frontMatterDict = [parser parse:nil];
                 HBPost *freshlyParsedPost = [HBPost postFromHash: frontMatterDict andString: contentStream];
