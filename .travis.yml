@@ -2,5 +2,5 @@ language: objective-c
 before_install:
   - gem install cocoapods
 rvm: 2.0.0
-xcode_project: hipblog.xcodeproj # path to your xcodeproj folder
+xcode_workspace: hipblog.xcworkspace # path to your xcodeproj folder
 xcode_scheme: hipblogTests
