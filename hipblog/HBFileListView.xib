@@ -68,6 +68,7 @@
                                 </tableColumns>
                                 <connections>
                                     <binding destination="wI2-23-RJU" name="content" keyPath="arrangedObjects" id="Id3-N7-IMx"/>
+                                    <binding destination="wI2-23-RJU" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="Id3-N7-IMx" id="fN4-w5-1f6"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -98,6 +99,7 @@
                 <string>title</string>
             </declaredKeys>
             <connections>
+                <binding destination="-2" name="selectionIndexes" keyPath="self.selectionIndexes" id="3gL-fv-qdO"/>
                 <binding destination="-2" name="contentArray" keyPath="self.posts" id="LYa-NH-epQ"/>
             </connections>
         </arrayController>

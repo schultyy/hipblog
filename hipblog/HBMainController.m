@@ -35,6 +35,21 @@
     [[self editorView] setContentView: self.editorController.view];
     [[self fileListView] setContentView: self.fileListController.view];
     [[self window] setTitle: directoryUrl.path];
+
+    [[self fileListController] addObserver:self
+                          forKeyPath:@"selectionIndexes"
+                             options:NSKeyValueObservingOptionNew
+                             context:nil];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"selectionIndexes"]) {
+        NSUInteger selectionIndex = [[[self fileListController] selectionIndexes] firstIndex];
+        
+        HBPost *selectedPost = [[[self fileListController] posts] objectAtIndex:selectionIndex];
+        
+        [[self editorController] setCurrentPost:selectedPost];
+    }
 }
 
 -(void)saveCurrentPost {

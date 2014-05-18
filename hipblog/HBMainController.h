@@ -12,7 +12,6 @@
 @class HBFileListViewController;
 
 @interface HBMainController : NSWindowController {
-
     NSURL *directoryUrl;
 }
 

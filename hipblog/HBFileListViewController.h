@@ -12,6 +12,8 @@
 
 @property (retain) NSArray *posts;
 
+@property (retain) NSIndexSet *selectionIndexes;
+
 -(id) initWithPath: (NSString *) path;
 
 @end
