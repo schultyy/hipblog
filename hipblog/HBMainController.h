@@ -19,6 +19,8 @@
 
 -(void) newBlogpost;
 
+-(void) openBlogpost;
+
 -(void) saveCurrentPost;
 
 @end

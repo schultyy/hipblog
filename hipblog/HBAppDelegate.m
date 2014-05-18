@@ -15,22 +15,10 @@
 }
 
 -(IBAction) openDirectory:(id)sender {
-//    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
-//
-//    [openDlg setCanChooseFiles:YES];
-//    [openDlg setAllowsMultipleSelection:NO];
-//    [openDlg setCanChooseDirectories:YES];
-//    [openDlg setCanChooseFiles:NO];
-//
-//    if([openDlg runModal] == NSOKButton)
-//    {
-//        id url = [openDlg directoryURL];
-//        NSLog(@"URL: %@", url);
-//
-//        HBMainController *controller = [[HBMainController alloc] init];
-//        [self setMainController:controller];
-//        [[self mainController] showWindow:self];
-//    }
+    HBMainController *doc = [[HBMainController alloc] init];
+    [doc openBlogpost];
+    [doc showWindow:self];
+    [self setMainController:doc];
 }
 
 -(IBAction) createNewBlogpost: (id) sender {

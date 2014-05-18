@@ -5,8 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class HBPost;
 
 @interface HBPostReader : NSObject
 +(NSArray *) forbidden;
++(HBPost *) readPost: (NSString *) filePath;
 +(NSArray *) readPosts: (NSString *) directoryPath;
 @end

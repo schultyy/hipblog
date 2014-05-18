@@ -10,7 +10,7 @@
 
 @interface HBPost : NSObject
 
-@property (retain) NSURL *filepath;
+@property (retain) NSString *filepath;
 
 @property (retain) HBFrontMatter *frontMatter;
 

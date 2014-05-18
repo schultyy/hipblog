@@ -10,6 +10,7 @@
 #import "HBEditorViewController.h"
 #import "HBPost.h"
 #import "HBPostWriter.h"
+#import "HBPostReader.h"
 
 @interface HBMainController ()
 
@@ -37,12 +38,28 @@
     [[self editorController] setCurrentPost:[[HBPost alloc] init]];
 }
 
+-(void) openBlogpost {
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+
+    [openDlg setAllowsMultipleSelection:NO];
+    [openDlg setCanChooseDirectories:NO];
+    [openDlg setCanChooseFiles:YES];
+
+    if([openDlg runModal] == NSOKButton)
+    {
+        NSURL *url = [openDlg URL];
+
+        HBPost *currentPost = [HBPostReader readPost: url.path];
+        [[self editorController] setCurrentPost:currentPost];
+    }
+}
+
 -(void)saveCurrentPost {
 
     HBPost *currentPost = [[self editorController] currentPost];
 
     if([currentPost filepath]) {
-        [HBPostWriter writeToFile:[currentPost filepath].path post: currentPost];
+        [HBPostWriter writeToFile:[currentPost filepath] post: currentPost];
     }
     else {
         NSSavePanel *savePanel = [[NSSavePanel alloc] init];
@@ -50,9 +67,9 @@
         [savePanel setCanCreateDirectories: NO];
         [savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"md"]];
         [savePanel setNameFieldStringValue:currentPost.filename];
-    
+
         if([savePanel runModal] == NSOKButton) {
-            [currentPost setFilepath:[savePanel URL]];
+            [currentPost setFilepath: [savePanel URL].path];
             [HBPostWriter writeToFile:[savePanel URL].path post:currentPost];
         }
     }
