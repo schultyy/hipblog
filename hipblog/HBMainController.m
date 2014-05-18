@@ -45,7 +45,9 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if([keyPath isEqualToString:@"selectionIndexes"]) {
         NSUInteger selectionIndex = [[[self fileListController] selectionIndexes] firstIndex];
-        
+        if(selectionIndex == NSNotFound){
+            return;
+        }
         HBPost *selectedPost = [[[self fileListController] posts] objectAtIndex:selectionIndex];
         
         [[self editorController] setCurrentPost:selectedPost];
