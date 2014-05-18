@@ -12,20 +12,20 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    HBMainController *controller = [[HBMainController alloc] init];
+    [self setMainController:controller];
 }
 
 -(IBAction) openDirectory:(id)sender {
-    HBMainController *doc = [[HBMainController alloc] init];
-    [doc openBlogpost];
-    [doc showWindow:self];
-    [self setMainController:doc];
+
+    [self.mainController openBlogpost];
+    [self.mainController showWindow:self];
 }
 
 -(IBAction) createNewBlogpost: (id) sender {
-    HBMainController *newDoc = [[HBMainController alloc] init];
-    [newDoc newBlogpost];
-    [newDoc showWindow:self];
-    [self setMainController:newDoc];
+
+    [self.mainController newBlogpost];
+    [self.mainController showWindow:self];
 }
 
 -(IBAction) saveBlogpost:(id)sender{

@@ -11,6 +11,7 @@
 #import "HBPost.h"
 #import "HBPostWriter.h"
 #import "HBPostReader.h"
+#import "HBFrontMatter.h"
 
 @interface HBMainController ()
 
@@ -51,6 +52,7 @@
 
         HBPost *currentPost = [HBPostReader readPost: url.path];
         [[self editorController] setCurrentPost:currentPost];
+        [[self window] setTitle: currentPost.frontMatter.title];
     }
 }
 
@@ -60,6 +62,7 @@
 
     if([currentPost filepath]) {
         [HBPostWriter writeToFile:[currentPost filepath] post: currentPost];
+        [[self window] setTitle: currentPost.frontMatter.title];
     }
     else {
         NSSavePanel *savePanel = [[NSSavePanel alloc] init];
@@ -71,6 +74,7 @@
         if([savePanel runModal] == NSOKButton) {
             [currentPost setFilepath: [savePanel URL].path];
             [HBPostWriter writeToFile:[savePanel URL].path post:currentPost];
+            [[self window] setTitle: currentPost.frontMatter.title];
         }
     }
 }
